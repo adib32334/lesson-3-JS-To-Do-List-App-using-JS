@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>To-Do List App using JS</title>
+    </head>
+    <body>
+        <h2>List App</h2>
+        <form id="myfrom">
+            <input id="inp1" type="text"><button>Add</button>
+        </form>
+        <ul id="ul1"></ul>
+        <script>
+            var myfrom = document.getElementById("myfrom");
+            var inp = document.getElementById("inp1");
+            var ul1 = document.getElementById("ul1");
+
+            function abc(event) {
+                event.preventDefult();
+                createItem(inp1,value);
+            }
+            function def(inputItem){
+                var item = `<li>${inputItem}
+                    <button onclick="deleteElements(this)">Delete</button></li>`
+                    myitms.insartAbjacentHTML("beforend",item)
+                    in1.value = ""
+                    inp1.froce();
+            }
+            function delete(){
+                
+            }
+        </script>
+    </body>
+</html>
