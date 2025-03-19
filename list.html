@@ -3,30 +3,36 @@
         <title>To-Do List App using JS</title>
     </head>
     <body>
-        <h2>List App</h2>
-        <form id="myfrom">
-            <input id="inp1" type="text"><button>Add</button>
+        <h3>Add your To Do List here</h3>
+        <form id="myForm">
+            <input id="myInput" type="text">
+            <button> Add </button>
         </form>
-        <ul id="ul1"></ul>
+        
+        <h3>To Do List</h3>
+        <ul id="myItem"></ul>
         <script>
-            var myfrom = document.getElementById("myfrom");
-            var inp = document.getElementById("inp1");
-            var ul1 = document.getElementById("ul1");
+            var myForm = document.getElementById("myForm");
+                var myInput = document.getElementById("myInput");
+                var myItem = document.getElementById("myItem");
 
-            function abc(event) {
-                event.preventDefult();
-                createItem(inp1,value);
-            }
-            function def(inputItem){
-                var item = `<li>${inputItem}
-                    <button onclick="deleteElements(this)">Delete</button></li>`
-                    myitms.insartAbjacentHTML("beforend",item)
-                    in1.value = ""
-                    inp1.froce();
-            }
-            function delete(){
-                
-            }
+                myForm.addEventListener("submit",
+                    function (event) {
+                        event.preventDefault()
+                        createItem(myInput.value)
+                    })
+
+                function createItem(inputItems) {
+                    var items = `<li>${inputItems}
+	<button onclick="deleteElement(this)">Delete</button> </li>`
+                    myItem.insertAdjacentHTML("beforeend", items)
+                    myInput.value = ""
+                    myInput.focus()
+                }
+
+                function deleteElement(ElementToDelete) {
+                    ElementToDelete.parentElement.remove()
+                }
         </script>
     </body>
 </html>
